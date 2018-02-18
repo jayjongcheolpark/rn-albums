@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Text, View } from 'react-native'
 
 const styles = {
@@ -19,13 +20,17 @@ const styles = {
   },
 }
 
-const Header = () => {
+const Header = ({ headerText }) => {
   const { textStyle, viewStyle } = styles
   return (
     <View style={viewStyle}>
-      <Text style={textStyle}>Albums!</Text>
+      <Text style={textStyle}>{headerText}</Text>
     </View>
   )
+}
+
+Header.propTypes = {
+  headerText: PropTypes.string.isRequired,
 }
 
 export default Header
