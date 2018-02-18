@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Text, TouchableOpacity } from 'react-native'
 
 const styles = {
@@ -21,14 +22,18 @@ const styles = {
   },
 }
 
-const Button = () => {
+const Button = ({ onPress }) => {
   const { buttonStyle, textStyle } = styles
 
   return (
-    <TouchableOpacity style={buttonStyle}>
+    <TouchableOpacity onPress={onPress} style={buttonStyle}>
       <Text style={textStyle}>Click me!!!</Text>
     </TouchableOpacity>
   )
+}
+
+Button.propTypes = {
+  onPress: PropTypes.func.isRequired,
 }
 
 export default Button
