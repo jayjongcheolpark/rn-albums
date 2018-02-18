@@ -1,20 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Text } from 'react-native'
+import { View, Text } from 'react-native'
 import Card from './Card'
 import CardSection from './CardSection'
 
-const AlbumDetail = ({ album }) => (
-  <Card>
-    <CardSection>
-      <Text>{album.title}</Text>
-    </CardSection>
-  </Card>
-)
+const styles = {
+  headerContentStyle: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
+}
+
+const AlbumDetail = ({ album }) => {
+  const { headerContentStyle } = styles
+
+  return (
+    <Card>
+      <CardSection>
+        <View />
+        <View style={headerContentStyle}>
+          <Text>{album.title}</Text>
+          <Text>{album.artist}</Text>
+        </View>
+      </CardSection>
+    </Card>
+  )
+}
 
 AlbumDetail.propTypes = {
   album: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    artist: PropTypes.string.isRequired,
   }).isRequired,
 }
 
