@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { View, Text, Image } from 'react-native'
 import Card from './Card'
 import CardSection from './CardSection'
+import Button from './Button'
 
 const styles = {
   headerContentStyle: {
@@ -63,6 +64,9 @@ const AlbumDetail = ({ album }) => {
         </CardSection>
         <CardSection>
           <Image style={imageStyle} source={{ uri: image }} />
+        </CardSection>
+        <CardSection>
+          <Button />
         </CardSection>
       </View>
     </Card>
